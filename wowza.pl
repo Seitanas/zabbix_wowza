@@ -49,7 +49,6 @@ sub validate{
     if ($bps =~ /E/){
 	my @values = split('E', $bps);
 	$bps=$values[0]*$values[1];
-	print "validating";
     }
     return $bps;
 }
