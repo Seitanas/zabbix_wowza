@@ -1,8 +1,7 @@
 #!/usr/bin/perl
 
 #Woza Media server statistics script
-#Tadas Ustinavičius 2014.05.21
-
+#Tadas Ustinavicius 2014.05.21
 
 use XML::Simple;
 use LWP;
@@ -46,10 +45,12 @@ my $simple = XML::Simple->new();
 my $data   = $simple->XMLin($xml_string);
 sub validate{
     my ($bps)= @_;
+
     if ($bps =~ /E/){
 	my @values = split('E', $bps);
-	$bps=$values[0]*$values[1];
+	$bps=$values[0]*(10**$values[1]);
     }
+    my $result = sprintf("%.2f", $bps);
     return $bps;
 }
 my $result="";
