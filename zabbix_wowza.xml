@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>2.0</version>
-    <date>2014-05-21T12:28:55Z</date>
+    <date>2014-05-26T06:55:24Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -28,7 +28,7 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>wowza.pl[&quot;-u&quot;,&quot;{$WOWZAUSER}&quot;,&quot;-p&quot;,&quot;{$WOWZAPASS}&quot;,&quot;-h&quot;,&quot;{HOST.HOST}&quot;,&quot;-c&quot;,&quot;conn&quot;]</key>
+                    <key>wowza.pl[&quot;-u&quot;,&quot;{$WOWZAUSER}&quot;,&quot;-p&quot;,&quot;{$WOWZAPASS}&quot;,&quot;-h&quot;,&quot;{HOST.IP}&quot;,&quot;-c&quot;,&quot;conn&quot;]</key>
                     <delay>30</delay>
                     <history>90</history>
                     <trends>365</trends>
@@ -70,12 +70,12 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>wowza.pl[&quot;-u&quot;,&quot;{$WOWZAUSER}&quot;,&quot;-p&quot;,&quot;{$WOWZAPASS}&quot;,&quot;-h&quot;,&quot;{HOST.HOST}&quot;,&quot;-c&quot;,&quot;inbps&quot;]</key>
+                    <key>wowza.pl[&quot;-u&quot;,&quot;{$WOWZAUSER}&quot;,&quot;-p&quot;,&quot;{$WOWZAPASS}&quot;,&quot;-h&quot;,&quot;{HOST.IP}&quot;,&quot;-c&quot;,&quot;inbps&quot;]</key>
                     <delay>30</delay>
                     <history>90</history>
                     <trends>365</trends>
                     <status>0</status>
-                    <value_type>3</value_type>
+                    <value_type>0</value_type>
                     <allowed_hosts/>
                     <units>Bps</units>
                     <delta>0</delta>
@@ -112,12 +112,12 @@
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
-                    <key>wowza.pl[&quot;-u&quot;,&quot;{$WOWZAUSER}&quot;,&quot;-p&quot;,&quot;{$WOWZAPASS}&quot;,&quot;-h&quot;,&quot;{HOST.HOST}&quot;,&quot;-c&quot;,&quot;outbps&quot;]</key>
+                    <key>wowza.pl[&quot;-u&quot;,&quot;{$WOWZAUSER}&quot;,&quot;-p&quot;,&quot;{$WOWZAPASS}&quot;,&quot;-h&quot;,&quot;{HOST.IP}&quot;,&quot;-c&quot;,&quot;outbps&quot;]</key>
                     <delay>30</delay>
                     <history>90</history>
                     <trends>365</trends>
                     <status>0</status>
-                    <value_type>3</value_type>
+                    <value_type>0</value_type>
                     <allowed_hosts/>
                     <units>Bps</units>
                     <delta>0</delta>
@@ -228,8 +228,8 @@
     </templates>
     <triggers>
         <trigger>
-            <expression>{Template_Wowza:wowza.pl[&quot;-u&quot;,&quot;{$WOWZAUSER}&quot;,&quot;-p&quot;,&quot;{$WOWZAPASS}&quot;,&quot;-h&quot;,&quot;{HOST.HOST}&quot;,&quot;-c&quot;,&quot;inbps&quot;].last()}=0</expression>
-            <name>No incoming Wowza traffic on (HOSTNAME}</name>
+            <expression>{Template_Wowza:wowza.pl[&quot;-u&quot;,&quot;{$WOWZAUSER}&quot;,&quot;-p&quot;,&quot;{$WOWZAPASS}&quot;,&quot;-h&quot;,&quot;{HOST.IP}&quot;,&quot;-c&quot;,&quot;inbps&quot;].last()}=0</expression>
+            <name>No incoming Wowza traffic on {HOSTNAME}</name>
             <url/>
             <status>0</status>
             <priority>3</priority>
@@ -266,7 +266,7 @@
                     <type>0</type>
                     <item>
                         <host>Template_Wowza</host>
-                        <key>wowza.pl[&quot;-u&quot;,&quot;{$WOWZAUSER}&quot;,&quot;-p&quot;,&quot;{$WOWZAPASS}&quot;,&quot;-h&quot;,&quot;{HOST.HOST}&quot;,&quot;-c&quot;,&quot;conn&quot;]</key>
+                        <key>wowza.pl[&quot;-u&quot;,&quot;{$WOWZAUSER}&quot;,&quot;-p&quot;,&quot;{$WOWZAPASS}&quot;,&quot;-h&quot;,&quot;{HOST.IP}&quot;,&quot;-c&quot;,&quot;conn&quot;]</key>
                     </item>
                 </graph_item>
             </graph_items>
@@ -298,7 +298,7 @@
                     <type>0</type>
                     <item>
                         <host>Template_Wowza</host>
-                        <key>wowza.pl[&quot;-u&quot;,&quot;{$WOWZAUSER}&quot;,&quot;-p&quot;,&quot;{$WOWZAPASS}&quot;,&quot;-h&quot;,&quot;{HOST.HOST}&quot;,&quot;-c&quot;,&quot;inbps&quot;]</key>
+                        <key>wowza.pl[&quot;-u&quot;,&quot;{$WOWZAUSER}&quot;,&quot;-p&quot;,&quot;{$WOWZAPASS}&quot;,&quot;-h&quot;,&quot;{HOST.IP}&quot;,&quot;-c&quot;,&quot;inbps&quot;]</key>
                     </item>
                 </graph_item>
             </graph_items>
@@ -330,7 +330,7 @@
                     <type>0</type>
                     <item>
                         <host>Template_Wowza</host>
-                        <key>wowza.pl[&quot;-u&quot;,&quot;{$WOWZAUSER}&quot;,&quot;-p&quot;,&quot;{$WOWZAPASS}&quot;,&quot;-h&quot;,&quot;{HOST.HOST}&quot;,&quot;-c&quot;,&quot;outbps&quot;]</key>
+                        <key>wowza.pl[&quot;-u&quot;,&quot;{$WOWZAUSER}&quot;,&quot;-p&quot;,&quot;{$WOWZAPASS}&quot;,&quot;-h&quot;,&quot;{HOST.IP}&quot;,&quot;-c&quot;,&quot;outbps&quot;]</key>
                     </item>
                 </graph_item>
             </graph_items>
